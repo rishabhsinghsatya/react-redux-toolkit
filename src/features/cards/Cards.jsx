@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import CardOne from "./CardOne";
 import CardsTwo from "./CardsTwo";
+import { useDispatch } from "react-redux";
+import { changeName } from "./cardSlice";
 
 const Cards = () => {
   const [name, setName] = useState("");
+  const dispatch = useDispatch();
   return (
     <div>
       <input
@@ -12,7 +15,14 @@ const Cards = () => {
           setName(e.target.value);
         }}
       />
-      <h2>{name}</h2>
+      <button
+        onClick={() => {
+          dispatch(changeName(name));
+        }}
+      >
+        Set Name
+      </button>
+      {/* <h2>{name}</h2> */}
       <CardOne />
       <CardsTwo />
     </div>

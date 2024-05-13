@@ -9,9 +9,9 @@ import Cards from "./features/cards/Cards";
 function App() {
   return (
     <div className="App">
-      <Counter />
+      {/* <Counter />
       <Theme />
-      <Coin />
+      <Coin /> */}
       <Cards />
       {/* <CardsThree /> */}
     </div>
